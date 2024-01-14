@@ -11,7 +11,6 @@ import { useToast } from "./ui/use-toast";
 import { TUser } from "@/integration/sign";
 import { Skeleton } from "./ui/skeleton";
 import LaoderButton from "./LaoderButton";
-import Laoding from "@/app/(home)/products/[id]/loading";
 
 function UpdateProfileComp() {
   let [user, setUser] = useState<TUser | null>(null);

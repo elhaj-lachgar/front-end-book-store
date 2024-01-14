@@ -3,7 +3,6 @@ import { MapPin } from "lucide-react";
 import React from "react";
 import { useContext } from "react";
 import { AddressContext } from "@/context/AddressContext";
-import { TAddressesPramas } from "@/integration/add-address";
 
 function AddressItems() {
   const { addresses } = useContext(AddressContext);

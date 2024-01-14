@@ -2,23 +2,16 @@
 import React, { useContext, useState } from "react";
 import {
   AlertDialog,
-  AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import LocationComp from "./LocationComp";
 import { useForm } from "react-hook-form";
 import { TAddressProps, resolvers } from "@/validator/add-address-validator";
 import { cn } from "@/lib/utils";
 import { AddressContext } from "@/context/AddressContext";
-import Laoding from "@/app/(home)/products/[id]/loading";
 import LaoderButton from "./LaoderButton";
 
 function ModuleAddAddress() {

@@ -26,7 +26,8 @@ function AllProducts() {
           category: book.category,
           description: book.description,
           price: book.price,
-          rating: Math.floor(Math.random() * 3 + 2),
+          rating: book.rating,
+          count_rating: book.count_rating, 
           title: book.title,
           image: book.image,
         };

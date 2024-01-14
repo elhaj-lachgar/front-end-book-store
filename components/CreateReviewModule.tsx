@@ -12,7 +12,6 @@ import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import CreateReview from "../integration/create-review";
 import { toast } from "./ui/use-toast";
-import Laoding from "@/app/(home)/products/[id]/loading";
 import LaoderButton from "./LaoderButton";
 function CreateReviewModule({ id }: { id: string }) {
   let [rating, setRating] = useState(0);

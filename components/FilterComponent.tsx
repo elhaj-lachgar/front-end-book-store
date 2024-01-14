@@ -78,7 +78,8 @@ function FilterComponent() {
         category: ele.category,
         description: ele.description,
         price: ele.price,
-        rating: Math.floor(Math.random() * 3 + 2),
+        rating: ele.rating,
+        count_rating: ele.count_rating,
         title: ele.title,
         image: ele.image,
       };
