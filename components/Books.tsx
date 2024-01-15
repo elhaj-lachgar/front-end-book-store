@@ -10,9 +10,11 @@ import MobileContainerBook from "./MobileContainerBook";
 import { LaodingContext } from "@/context/LoadingContext";
 import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "./ui/use-toast";
+import { CardContext } from "@/context/CartContext";
 function Books({ books }: { books: TApiBooks }) {
   const { changedBooks, books: listBook } = useContext(BookContext);
   const { Loading, setLoading } = useContext(LaodingContext);
+  const  {reload} = useContext(CardContext)
   const searchParams = useSearchParams();
   const payement = searchParams.get('payement');
   const router = useRouter()
@@ -23,6 +25,7 @@ function Books({ books }: { books: TApiBooks }) {
         duration : 3000 ,
         variant : "destructive"
       });
+      reload()
       router.push("/")
     }
   }

@@ -18,7 +18,10 @@ function CartContextProvider({ children }: { children: React.ReactNode }) {
     totlePrice: 0,
     cardItems: [],
   });
-  const reload = ()=>{setCard(card)}
+  const reload = (option?: string) => {
+    if (option == "log-out") window.location.reload();
+    else setCard(card);
+  };
   const addToCard = async (data: TProductInfo) => {
     const element = card.cardItems.find((item) => item._id == data._id);
 
@@ -40,7 +43,7 @@ function CartContextProvider({ children }: { children: React.ReactNode }) {
         toast({
           variant: "destructive",
           description: "same thing wrong",
-          duration : 2000
+          duration: 2000,
         });
       }
     }
@@ -108,7 +111,7 @@ function CartContextProvider({ children }: { children: React.ReactNode }) {
         toast({
           variant: "destructive",
           description: "same thing wrong",
-          duration : 2000,
+          duration: 2000,
         });
         return;
       }
@@ -163,7 +166,7 @@ function CartContextProvider({ children }: { children: React.ReactNode }) {
         toast({
           variant: "destructive",
           description: "same thing wrong",
-          duration : 2000
+          duration: 2000,
         });
         return;
       }
@@ -178,10 +181,10 @@ function CartContextProvider({ children }: { children: React.ReactNode }) {
       totlePrice: TotalePrice,
       cardItems: arr,
     });
-    const newCard : TCardProps = {
-      cardItems:arr,
-      totlePrice : TotalePrice,
-    }
+    const newCard: TCardProps = {
+      cardItems: arr,
+      totlePrice: TotalePrice,
+    };
     window.localStorage.setItem("card", JSON.stringify(newCard));
   };
   useEffect(() => {
@@ -196,7 +199,7 @@ function CartContextProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <CardContext.Provider
-      value={{ card, addToCard, setQuantity, deleteToCard , reload }}
+      value={{ card, addToCard, setQuantity, deleteToCard, reload }}
     >
       {children}
     </CardContext.Provider>

@@ -21,7 +21,7 @@ interface ContextProps {
   addToCard: (product: TProductInfo) => void;
   setQuantity : (vl : number , id : string) => void;
   deleteToCard : (id:string) => void;
-  reload : () => void;
+  reload : (value?: string) => void;
 }
 
 const initCartValue: ContextProps = {

@@ -12,8 +12,8 @@ function UserSideBar() {
   const LogOutHandler = () => {
     window.localStorage.removeItem("user");
     window.localStorage.removeItem("token");
-    reload()
     router.push("/");
+    reload("log-out")
   };
   return (
     <div className="flex flex-col px-5 gap-y-3">
