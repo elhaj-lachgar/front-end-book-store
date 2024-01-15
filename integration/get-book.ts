@@ -29,7 +29,8 @@ async function GetBook(id: string) {
   const url = `https://book-store-backend-ouns.onrender.com/api/v1/books/${id}`;
   const response = await fetch(url, { headers: header , next : {revalidate : 0}});
   const result  = await ParserJson(response.body);
-  if(result.data){
+  console.log(result)
+  if(result?.data){
     return result;
   }
   return null;

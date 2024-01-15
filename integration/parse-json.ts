@@ -8,7 +8,7 @@ export default async function ParserJson(body: ReadableStream | null) {
   const value = (await body.getReader().read()).value;
 
   try {
-    const str = await decoder.decode(value);
+    const str = decoder.decode(value);
     return JSON.parse(str);
   } catch (err: any) {
     const message = new Error(err.message);

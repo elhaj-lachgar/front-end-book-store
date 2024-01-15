@@ -18,7 +18,7 @@ function CartContextProvider({ children }: { children: React.ReactNode }) {
     totlePrice: 0,
     cardItems: [],
   });
-  const reload = ()=>{window.location.reload()}
+  const reload = ()=>{setCard(card)}
   const addToCard = async (data: TProductInfo) => {
     const element = card.cardItems.find((item) => item._id == data._id);
 
