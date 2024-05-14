@@ -9,7 +9,8 @@ async function page({params}:{params:Params}) {
   let data = null;
   try {
      const result = await GetBook(params.id);
-    if(result.data){
+    //  @ts-ignore
+    if(result?.data){
       data = result;
     }
   }
@@ -17,7 +18,7 @@ async function page({params}:{params:Params}) {
     console.error(err);
   }
   
-  console.log({data})
+
 
   return (
     <div className="w-11/12 min-h-[100vh] flex justify-center mt-20 mx-auto">

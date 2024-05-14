@@ -19,7 +19,7 @@ export type ResProps = {
       __v: number;
     };
     createdAt: string;
-    author: string; 
+    author: string;
     updatedAt: string;
     __v: number;
   };
@@ -27,13 +27,21 @@ export type ResProps = {
 
 async function GetBook(id: string) {
   const url = `https://book-store-backend-ouns.onrender.com/api/v1/books/${id}`;
-  const response = await fetch(url, { headers: header , next : {revalidate : 0}});
-  const result  = await ParserJson(response.body);
-  console.log(result)
-  if(result?.data){
-    return result;
-  }
-  return null;
+  const res = await fetch(url, { headers: header})
+    .then((response) => response.json())
+    .then((data) => {
+      if (data?.data) {
+        return data;
+      } else {
+        return null;
+      }
+    })
+    .catch((error) => {
+      console.error("error", error);
+      return null;
+    }); 
+  
+    return res;
 }
 
 export default GetBook;
